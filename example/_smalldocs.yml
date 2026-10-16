@@ -4,7 +4,7 @@ project:
 website:
   title: Tufte
   description: A demo of the smalldocs-tufte theme
-  site-url: https://rahuldave.github.io/smalldocs-tufte/
+  site-url: https://rahuldave.com/smalldocs-tufte/
   repo-url: https://github.com/rahuldave/smalldocs-tufte
   page-navigation: true
   navbar:

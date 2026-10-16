@@ -6,7 +6,7 @@ The text is set in ET Book on a cream paper, in a narrow column. Headings are in
 italic, links are underlined in the colour of the text, and tables have only three
 rules. The theme has a light mode and a dark mode.
 
-See it live: **<https://rahuldave.github.io/smalldocs-tufte/>**, a demo site built from `example/`.
+See it live: **<https://rahuldave.github.io/smalldocs-tufte/>** (it opens at rahuldave.com/smalldocs-tufte/), a demo site built from `example/`.
 
 ![A page in the Tufte theme](screenshot.png)
 
