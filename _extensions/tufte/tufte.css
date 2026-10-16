@@ -82,7 +82,8 @@ html:root {
   --sd-code-bg: rgba(var(--bs-emphasis-color-rgb), .035);
 }
 html.quarto-dark:root { --sd-inline-code: var(--bs-body-color); --sd-code-bg: rgba(255, 255, 255, .05); }
-html { font-size: 15px; }
+/* the size of 1rem, as in Tufte CSS. smalldocs sets 17px; html:root wins over it, and --sd-root-font-size is how a newer smalldocs reads it */
+html:root { font-size: 15px; --sd-root-font-size: 15px; }
 body { -webkit-font-smoothing: antialiased; font-variant-ligatures: common-ligatures; }
 html body.listing #quarto-content { --sd-body-width: 900px; }
 html body.docked #quarto-content { --sd-body-width: 760px; --sd-sidebar-width: 230px; }
