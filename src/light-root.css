@@ -1,0 +1,24 @@
+
+/* ---------------------------------------------------------------- Tufte: the light colours */
+
+:root, [data-bs-theme=light] {
+  color-scheme: light;
+  --bs-body-bg: #fffff8; --bs-body-bg-rgb: 255, 255, 248;
+  --bs-body-color: #111; --bs-body-color-rgb: 17, 17, 17;
+  --bs-emphasis-color: #000; --bs-emphasis-color-rgb: 0, 0, 0;
+  --bs-heading-color: #111;
+  --bs-secondary-color: rgba(17, 17, 17, .62); --bs-secondary-color-rgb: 17, 17, 17;
+  --bs-tertiary-color: rgba(17, 17, 17, .45);
+  --bs-secondary-bg: #f2f2e8; --bs-secondary-bg-rgb: 242, 242, 232;
+  --bs-tertiary-bg: #f8f8ee; --bs-tertiary-bg-rgb: 248, 248, 238;
+  --bs-border-color: #d6d6cc; --bs-border-color-translucent: rgba(17, 17, 17, .14);
+  --bs-link-color: #111; --bs-link-color-rgb: 17, 17, 17;
+  --bs-link-hover-color: #7a1c1c; --bs-link-hover-color-rgb: 122, 28, 28;
+  --bs-code-color: #111;
+  --bs-primary: #111; --bs-primary-rgb: 17, 17, 17;
+  --bs-highlight-bg: #f5ecc4; --bs-highlight-color: #111;
+  --bs-primary-bg-subtle: #ecece2; --bs-primary-border-subtle: #cfcfc4; --bs-primary-text-emphasis: #111;
+  --bs-focus-ring-color: rgba(17, 17, 17, .2);
+  /* Tufte's few colours, muted, for the callouts */
+  --tufte-note: #3b5b7a; --tufte-tip: #3d6b3d; --tufte-warning: #9a7400; --tufte-important: #8b1a1a; --tufte-caution: #a0522d;
+}

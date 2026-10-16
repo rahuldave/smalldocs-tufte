@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+// Tufte CSS for Quarto: the dark colours, as Tufte CSS's dark mode. Use it after tufte.scss.
+$body-bg: #151515 !default;
+$body-color: #ddd !default;
+$primary: #ddd !default;
+$link-color: #ddd !default;
+$link-hover-color: #e8b4a0 !default;
+$border-color: #3a3a37 !default;
+$navbar-bg: $body-bg !default;
+$navbar-fg: rgba(221, 221, 221, .62) !default;
+$navbar-hl: #ddd !default;
+$footer-bg: $body-bg !default;
+$footer-fg: rgba(221, 221, 221, .62) !default;
+$sidebar-bg: $body-bg !default;
+$code-color: #ddd !default;
+$toc-color: #ddd !default;
+$callout-color-note: #8fb0d0 !default;
+$callout-color-tip: #93c093 !default;
+$callout-color-warning: #d8b65a !default;
+$callout-color-important: #e08a8a !default;
+$callout-color-caution: #d99a6c !default;

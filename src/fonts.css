@@ -1,0 +1,10 @@
+/*!
+ * smalldocs-tufte: a Tufte CSS theme for smalldocs and Quarto. https://github.com/rahuldave/smalldocs-tufte
+ * The look follows Tufte CSS, Copyright (c) 2014 Dave Liepmann, MIT (https://github.com/edwardtufte/tufte-css).
+ * ET Book, Copyright (c) 2015 Dmitry Krasny, Bonnie Scranton, Edward Tufte, MIT (https://github.com/edwardtufte/et-book).
+ * This file is Bootstrap 5.3.8 (above) followed by the Tufte rules (below).
+ */
+@font-face { font-family: "et-book"; src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"); font-weight: normal; font-style: normal; font-display: swap; }
+@font-face { font-family: "et-book"; src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"); font-weight: normal; font-style: italic; font-display: swap; }
+@font-face { font-family: "et-book"; src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"); font-weight: bold; font-style: normal; font-display: swap; }
+@font-face { font-family: "et-book-roman-old-style"; src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"); font-weight: normal; font-style: normal; font-display: swap; }

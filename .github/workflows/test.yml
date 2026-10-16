@@ -10,3 +10,5 @@ jobs:
           python-version: "3.12"
       - run: pip install pytest
       - run: pytest -v tests
+      - name: The built files match their sources
+        run: sh scripts/build.sh && git diff --exit-code -- _extensions/tufte

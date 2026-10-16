@@ -1,0 +1,20 @@
+
+/* ---------------------------------------------------------------- Tufte: what differs in Quarto's own stylesheet */
+html main.content h2, html #quarto-document-content h2 { border-bottom: 0; padding-bottom: 0; }
+html .navbar { border-bottom: 1px solid $border-color; }
+/* Quarto gives the navbar data-bs-theme="dark" in both modes, so its colours come from the Sass variables */
+html .navbar .navbar-brand, html .navbar .navbar-title { font-weight: 400; font-style: italic; color: $body-color; }
+html div.callout.callout { border-top: 0; border-right: 0; border-bottom: 0; border-radius: 0; }
+html .callout.callout > div.callout-header { background: none; font-style: italic; font-weight: 400; font-size: 1.3rem; opacity: 1; }
+html .callout.callout .callout-body { font-size: 1.25rem; }
+html div.sourceCode, html pre.sourceCode { border-radius: 0; }
+html .sidebar-navigation .sidebar-item, html .sidebar-navigation .sidebar-section .sidebar-item { font-size: 1.15rem; }
+html .sidebar-navigation .sidebar-item .active { font-style: italic; }
+html .sidebar nav[role=doc-toc] > h2 { font-size: 1.15rem; font-style: italic; font-weight: 400; }
+html .sidebar nav[role=doc-toc] ul { font-size: 1.1rem; }
+html .sidebar nav[role=doc-toc] ul > li > a.active { font-style: italic; border-left-color: transparent; }
+html .sidebar .toc-actions > ul { font-size: 1rem; }
+html .quarto-title-breadcrumbs .breadcrumb { font-size: 1.05rem; }
+html .nav-footer .nav-footer-left, html .nav-footer .nav-footer-center, html .nav-footer .nav-footer-right { font-size: 1.05rem; }
+html .nav-page .nav-page-text { font-size: 1.15rem; font-style: italic; }
+html div.quarto-post .body .listing-subtitle { font-size: 1.1rem; }

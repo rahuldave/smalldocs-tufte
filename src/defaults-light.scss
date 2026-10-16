@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+// Tufte CSS for Quarto: the light colours. Built from smalldocs-tufte; the rules below match tufte.css.
+$body-bg: #fffff8 !default;
+$body-color: #111 !default;
+$primary: #111 !default;
+$link-color: #111 !default;
+$link-hover-color: #7a1c1c !default;
+$border-color: #d6d6cc !default;
+$font-family-sans-serif: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif !default;
+$font-family-monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
+$font-size-root: 15px !default;
+$font-size-base: 1.4rem !default;
+$line-height-base: 1.45 !default;
+$headings-font-weight: 400 !default;
+$border-radius: 0 !default;
+$border-radius-sm: 0 !default;
+$border-radius-lg: 0 !default;
+$navbar-bg: $body-bg !default;
+$navbar-fg: rgba(17, 17, 17, .62) !default;
+$navbar-hl: #111 !default;
+$footer-bg: $body-bg !default;
+$footer-fg: rgba(17, 17, 17, .62) !default;
+$sidebar-bg: $body-bg !default;
+$code-color: #111 !default;
+$code-bg: transparent !default;
+$toc-color: #111 !default;
+$callout-border-width: 2px !default;
+$callout-color-note: #3b5b7a !default;
+$callout-color-tip: #3d6b3d !default;
+$callout-color-warning: #9a7400 !default;
+$callout-color-important: #8b1a1a !default;
+$callout-color-caution: #a0522d !default;

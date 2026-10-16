@@ -1,0 +1,181 @@
+
+/* ---------------------------------------------------------------- Tufte: type, measure and rules, the same in both modes */
+/* smalldocs.css loads after this file, so a rule that must win over one of its rules starts with `html`. */
+
+:root, [data-bs-theme] {
+  --bs-body-font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  --bs-font-sans-serif: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  --bs-font-monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --bs-body-font-size: 1.4rem;
+  --bs-body-line-height: 1.45;
+  --bs-border-radius: 0; --bs-border-radius-sm: 0; --bs-border-radius-lg: 0;
+  --bs-link-decoration: underline;
+}
+html:root {
+  --sd-body-width: 720px;
+  --sd-sidebar-width: 230px;
+  --sd-margin-width: 220px;
+  --sd-gap: 3rem;
+  --sd-inline-code: var(--bs-body-color);
+  --sd-code-bg: rgba(var(--bs-emphasis-color-rgb), .035);
+}
+html.quarto-dark:root { --sd-inline-code: var(--bs-body-color); --sd-code-bg: rgba(255, 255, 255, .05); }
+/* the size of 1rem, as in Tufte CSS. smalldocs sets 17px; html:root wins over it, and --sd-root-font-size is how a newer smalldocs reads it */
+html:root { font-size: 15px; --sd-root-font-size: 15px; }
+body { -webkit-font-smoothing: antialiased; font-variant-ligatures: common-ligatures; }
+html body.listing #quarto-content { --sd-body-width: 900px; }
+html body.docked #quarto-content { --sd-body-width: 760px; --sd-sidebar-width: 230px; }
+
+/* Links: the text's own colour, underlined with a thin rule, as in Tufte CSS */
+a { text-decoration-thickness: 1px; text-underline-offset: .14em; text-decoration-color: rgba(var(--bs-body-color-rgb), .55); }
+a:hover { text-decoration-color: currentColor; }
+.navbar a, .sidebar-navigation a, #TOC a, .breadcrumb a, .page-navigation a, .footer a, .search-result, .quarto-post a, .quarto-grid-link, .listing-category { text-decoration: none; }
+
+/* Headings: normal weight, h2 and h3 in italic */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: 400; line-height: 1.1; }
+h2, h3, .h2, .h3 { font-style: italic; }
+html main.content h1, html main.content h2, html main.content h3, html main.content h4, html main.content h5, html main.content h6 { font-weight: 400; }
+html .quarto-title h1.title { font-size: 3.2rem; font-weight: 400; line-height: 1.05; margin-bottom: .75rem; }
+html .quarto-title .subtitle { font-style: italic; font-size: 1.8rem; line-height: 1.2; margin-top: .5rem; }
+html main.content h1:not(.title) { font-size: 2.6rem; margin-top: 3rem; }
+html main.content h2 { font-size: 2.2rem; font-style: italic; border-bottom: 0; padding-bottom: 0; margin-top: 2.6rem; margin-bottom: 1.2rem; }
+html main.content h3 { font-size: 1.7rem; font-style: italic; margin-top: 2rem; margin-bottom: 1rem; }
+html main.content h4 { font-size: 1.4rem; font-style: italic; margin-top: 1.6rem; margin-bottom: .8rem; }
+html main.content h5, html main.content h6 { font-size: 1.4rem; font-variant: small-caps; letter-spacing: .03em; }
+html .header-section-number { font-style: normal; }
+.quarto-title-meta-heading { letter-spacing: .06em; }
+
+/* The text */
+p, ul, ol, dl { line-height: 1.45; }
+main.content p, main.content li { hyphens: auto; -webkit-hyphens: auto; }
+html code, html a { hyphens: manual; -webkit-hyphens: manual; }
+main.content > p:first-of-type, .quarto-title-block + p { margin-top: 0; }
+html dt { font-weight: 400; font-style: italic; }
+b, strong { font-weight: bold; }
+hr { opacity: 1; border-top: 1px solid var(--bs-border-color); width: 55%; }
+html main.content blockquote { border-left: 0; padding: 0 0 0 2rem; font-style: normal; color: var(--bs-body-color); }
+html main.content blockquote footer { text-align: right; font-size: 1.1rem; }
+html .footnotes { font-size: 1.1rem; }
+.numeral { font-family: et-book-roman-old-style; }
+::selection { background: rgba(var(--bs-body-color-rgb), .15); }
+mark, .mark { padding: 0 .1em; }
+
+/* Figures and tables */
+html .quarto-figure figcaption, figcaption { font-size: 1.1rem; font-style: italic; color: var(--bs-secondary-color); line-height: 1.4; }
+html main.content table { font-size: 1.15rem; }
+.table { --bs-table-bg: transparent; --bs-table-color: var(--bs-body-color); --bs-table-striped-bg: rgba(var(--bs-body-color-rgb), .03); --bs-table-hover-bg: rgba(var(--bs-body-color-rgb), .05); --bs-table-border-color: var(--bs-border-color); font-variant-numeric: tabular-nums; }
+/* Booktabs: a heavy rule above and below, a light one under the header, none between rows */
+table.table { border-top: 2px solid var(--bs-body-color); border-bottom: 2px solid var(--bs-body-color); }
+table.table > :not(caption) > * > * { border-bottom-width: 0; padding: .35rem .75rem; }
+table.table > thead > tr > * { border-bottom: 1px solid var(--bs-body-color); font-weight: 400; font-style: italic; }
+caption { font-style: italic; font-size: 1.1rem; color: var(--bs-secondary-color); }
+
+/* Code: Consolas, no box, a little smaller than the text */
+code, kbd, pre, samp { font-family: var(--bs-font-monospace); }
+html code { font-size: .8em; }
+html pre { font-size: 1rem; line-height: 1.45; }
+html :not(pre) > code { background: none; padding: 0; }
+html pre, html div.sourceCode { border-radius: 0; }
+html div.sourceCode { background: var(--sd-code-bg); border-left: 1px solid var(--bs-border-color); }
+html pre code { font-size: inherit; }
+html .code-with-filename-file { border-radius: 0; }
+html .code-with-filename-file pre { font-size: .9rem; font-style: italic; }
+
+/* Callouts: a thin rule in a muted colour, a title in italic, no tinted box */
+html .callout { border: 0; border-left: 2px solid var(--sd-callout); border-radius: 0; margin: 1.8rem 0; padding-left: .25rem; }
+html .callout-note { --sd-callout: var(--tufte-note); }
+html .callout-tip { --sd-callout: var(--tufte-tip); }
+html .callout-warning { --sd-callout: var(--tufte-warning); }
+html .callout-important { --sd-callout: var(--tufte-important); }
+html .callout-caution { --sd-callout: var(--tufte-caution); }
+html .callout-header { background: none; font-weight: 400; font-style: italic; font-size: 1.3rem; padding: 0 .9rem; }
+html .callout-body { padding: .2rem .9rem; font-size: 1.25rem; }
+html .callout:not(.callout-titled) .callout-body { padding-top: .2rem; }
+html .callout-body > :first-child { margin-top: 0; }
+
+/* Tabsets */
+.nav-tabs { --bs-nav-tabs-border-radius: 0; --bs-nav-tabs-link-active-bg: var(--bs-body-bg); }
+.nav-tabs .nav-link { font-style: italic; font-size: 1.15rem; color: var(--bs-secondary-color); }
+.nav-tabs .nav-link.active { color: var(--bs-body-color); }
+html .panel-tabset .tab-content { border-radius: 0; }
+
+/* The navbar: the same paper as the page, a hairline below, the title in italic */
+html .sd-navbar-default { background: var(--bs-body-bg); border-bottom: 1px solid var(--bs-border-color); --bs-navbar-color: var(--bs-secondary-color); --bs-navbar-active-color: var(--bs-body-color); --bs-navbar-hover-color: var(--bs-body-color); }
+html #quarto-header .navbar { padding-top: .6rem; padding-bottom: .6rem; }
+html .navbar-title { font-weight: 400; font-style: italic; font-size: 1.7rem; }
+.navbar { font-size: 1.2rem; }
+.navbar .nav-link.active { font-style: italic; }
+.navbar-toggler { border: 0; }
+.form-control, .form-select { font-size: 1.05rem; border-radius: 0; background-color: var(--bs-body-bg); }
+.form-control:focus, .form-select:focus { border-color: var(--bs-body-color); box-shadow: none; }
+.dropdown-menu { --bs-dropdown-font-size: 1.1rem; --bs-dropdown-bg: var(--bs-body-bg); --bs-dropdown-link-active-bg: var(--bs-secondary-bg); --bs-dropdown-link-active-color: var(--bs-body-color); border-radius: 0; }
+html .search-result-title { font-weight: 400; font-style: italic; font-size: 1.15rem; }
+html .search-result-section, html .search-result-text { font-size: 1rem; }
+
+/* The sidebar and the table of contents: small, quiet, the current page in italic */
+html .sidebar-navigation { font-size: 1.15rem; }
+html .sidebar-title { font-style: italic; font-size: 1.6rem; }
+html .sidebar-link { opacity: .75; }
+html .sidebar-link.active { color: var(--bs-body-color); opacity: 1; font-style: italic; }
+html .sidebar-item-section > .sidebar-item-container .sidebar-link { opacity: 1; font-variant: small-caps; letter-spacing: .04em; }
+html body.docked .sidebar-navigation { background: var(--bs-body-bg); }
+html .margin-sidebar { font-size: 1.1rem; }
+html #TOC #toc-title { font-size: 1.15rem; font-style: italic; }
+html #TOC .nav-link { border-left: 0; padding-left: 0; }
+html #TOC .nav-link.active { color: var(--bs-body-color); font-style: italic; }
+html .toc-action { font-size: 1rem; }
+html .breadcrumb { font-size: 1.05rem; font-style: italic; }
+
+/* Side notes and margin notes, as Tufte's: smalldocs puts them in the margin; here they get the type of a small text */
+html main.content .column-margin, html main.content .margin-aside, html main.content div.aside {
+  font-size: 1.1rem; line-height: 1.35; color: var(--bs-body-color);
+}
+html main.content .margin-caption { font-size: 1.1rem; line-height: 1.35; font-style: italic; color: var(--bs-secondary-color); }
+html main.content .column-container sup, html main.content .footnote-ref sup { font-size: .7em; line-height: 0; }
+html main.content .footnote-ref { color: inherit; text-decoration: none; }
+html main.content .column-margin .figure-img { margin-bottom: .4rem; }
+
+/* Listings and cards */
+html .quarto-post .listing-title { font-style: italic; font-size: 1.7rem; }
+html .quarto-post .metadata, html .quarto-post .listing-subtitle { font-size: 1.1rem; }
+html .quarto-category, html .listing-category { text-transform: none; font-style: italic; font-size: 1rem; border: 0; padding: 0 .3rem 0 0; }
+.card { --bs-card-bg: var(--bs-body-bg); --bs-card-border-radius: 0; --bs-card-inner-border-radius: 0; }
+html .quarto-grid-item .card-title { font-style: italic; font-size: 1.4rem; font-variant: normal; letter-spacing: 0; }
+html .quarto-grid-item .listing-description, html .quarto-grid-item .card-subtitle { font-size: 1.1rem; }
+html .quarto-post .listing-description { font-size: 1.25rem; }
+html .quarto-post .thumbnail-image { border-radius: 0; }
+html .listing-actions-group { flex-wrap: wrap; }
+html .quarto-listing-category-title { font-weight: 400; font-style: italic; font-size: 1.15rem; }
+html .quarto-grid-item:hover { box-shadow: none; border-color: var(--bs-body-color); }
+
+/* Page navigation and footer */
+html .pagination-link { font-weight: 400; font-style: italic; }
+html .footer { font-size: 1.05rem; }
+.btn { border-radius: 0; }
+.btn-primary { --bs-btn-bg: var(--bs-body-color); --bs-btn-border-color: var(--bs-body-color); --bs-btn-color: var(--bs-body-bg); --bs-btn-hover-bg: var(--bs-emphasis-color); --bs-btn-hover-border-color: var(--bs-emphasis-color); --bs-btn-hover-color: var(--bs-body-bg); --bs-btn-active-bg: var(--bs-emphasis-color); --bs-btn-active-border-color: var(--bs-emphasis-color); --bs-btn-active-color: var(--bs-body-bg); --bs-btn-disabled-bg: var(--bs-body-color); --bs-btn-disabled-border-color: var(--bs-body-color); --bs-btn-disabled-color: var(--bs-body-bg); }
+
+/* Bootstrap's components, on any page: ink in place of Bootstrap's blue */
+.btn-outline-primary { --bs-btn-color: var(--bs-body-color); --bs-btn-border-color: var(--bs-body-color); --bs-btn-hover-color: var(--bs-body-bg); --bs-btn-hover-bg: var(--bs-body-color); --bs-btn-hover-border-color: var(--bs-body-color); --bs-btn-active-color: var(--bs-body-bg); --bs-btn-active-bg: var(--bs-body-color); --bs-btn-active-border-color: var(--bs-body-color); --bs-btn-disabled-color: var(--bs-body-color); --bs-btn-disabled-border-color: var(--bs-body-color); }
+.btn-link { --bs-btn-color: var(--bs-link-color); --bs-btn-hover-color: var(--bs-link-hover-color); }
+.text-bg-primary { color: var(--bs-body-bg) !important; }
+.list-group { --bs-list-group-bg: transparent; --bs-list-group-active-bg: var(--bs-body-color); --bs-list-group-active-border-color: var(--bs-body-color); --bs-list-group-active-color: var(--bs-body-bg); }
+.pagination { --bs-pagination-bg: transparent; --bs-pagination-color: var(--bs-body-color); --bs-pagination-hover-color: var(--bs-body-color); --bs-pagination-focus-color: var(--bs-body-color); --bs-pagination-focus-box-shadow: none; --bs-pagination-active-bg: var(--bs-body-color); --bs-pagination-active-border-color: var(--bs-body-color); --bs-pagination-active-color: var(--bs-body-bg); --bs-pagination-border-radius: 0; }
+.progress, .progress-stacked { --bs-progress-bar-bg: var(--bs-body-color); --bs-progress-bar-color: var(--bs-body-bg); --bs-progress-bg: var(--bs-secondary-bg); --bs-progress-border-radius: 0; }
+.nav-pills { --bs-nav-pills-link-active-bg: var(--bs-body-color); --bs-nav-pills-link-active-color: var(--bs-body-bg); --bs-nav-pills-border-radius: 0; }
+.form-check-input:checked, .form-check-input[type=checkbox]:indeterminate { background-color: #5a5a55; border-color: #5a5a55; }
+.form-check-input:focus, .form-range:focus::-webkit-slider-thumb { box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color); border-color: var(--bs-body-color); }
+.form-range::-webkit-slider-thumb { background-color: var(--bs-body-color); }
+.form-range::-moz-range-thumb { background-color: var(--bs-body-color); }
+.accordion { --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color); --bs-accordion-active-color: var(--bs-body-color); }
+.badge { --bs-badge-font-weight: 400; }
+
+@media (max-width: 991.98px) {
+  html .quarto-title h1.title { font-size: 2.4rem; }
+  html main.content h2 { font-size: 1.9rem; }
+  html main.content h3 { font-size: 1.5rem; }
+  html .navbar-title { font-size: 1.4rem; }
+}
+@media (max-width: 575.98px) {
+  :root, [data-bs-theme] { --bs-body-font-size: 1.3rem; }
+  html .quarto-title h1.title { font-size: 2.1rem; }
+}
