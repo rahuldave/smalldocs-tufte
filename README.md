@@ -34,6 +34,21 @@ smalldocs:
 The site gets both modes, with a button in the navbar that switches between them.
 `smalldocs themes` lists the themes of a project, and where each came from.
 
+### Side notes
+
+Tufte puts notes in the margin, beside the text. smalldocs 0.2.0 and later does the same, and this
+theme gives the notes Tufte's look. Put each footnote in the margin with one line in the config:
+
+```yaml
+reference-location: margin
+```
+
+A div with the class `.column-margin` is a margin note with no number, and `[a remark]{.aside}` is a
+short one inside a sentence. `fig-cap-location: margin` puts captions beside their figures, and
+`.column-page` makes a figure as wide as the page. The demo's
+[Side notes](https://rahuldave.com/smalldocs-tufte/guide/side-notes.html) page shows each of them.
+The same classes work in Quarto.
+
 ## With Quarto
 
 ```sh

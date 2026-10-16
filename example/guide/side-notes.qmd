@@ -1,0 +1,48 @@
+---
+title: Side notes
+description: Notes, asides and captions in the margin, and a figure as wide as the page.
+fig-cap-location: margin
+---
+
+Tufte puts his notes beside the text, and not at the foot of the page or the end of the book.
+The reader sees the note at the moment the text calls for it, and the eye moves a short way
+across, and back.[^sidenote] A footnote in Markdown becomes such a side note when the page sets
+`reference-location: margin`.[^config]
+
+[^sidenote]: This is a side note. It stands level with the paragraph that cites it, in the
+    same face as the text, a little smaller.
+[^config]: In `_smalldocs.yml`, or in the front matter of one page.
+
+::: {.column-margin}
+A margin note has no number. It is a remark beside the text, written as a div with the
+class `.column-margin`.
+:::
+
+Margin notes have no numbers. They suit a remark that the reader can skip, such as a definition, a
+date or a short quotation. A short note can also sit inside a sentence, as a span with the class
+`.aside`, [Tufte calls these marginalia]{.aside} and it then stands level with its line.
+
+## A caption in the margin
+
+![The rainfall of a made-up town, month by month. With `fig-cap-location: margin`, the caption stands beside the figure.](../images/rainfall.svg)
+
+The caption beside a figure leaves the column of the text for the figure alone, and the reader
+reads the caption and the picture at the same time.
+
+![A small figure can go in the margin too, with the class `.column-margin`.](../images/rainfall.svg){.column-margin}
+
+A small figure in the margin works as an illustration of the text beside it, the way a book of
+Tufte's places small multiples beside the paragraph that discusses them.
+
+## A figure as wide as the page
+
+::: {.column-page}
+![The same data across the width of the page, from the text to the edge of the margin.](../images/rainfall.svg){width=100%}
+:::
+
+A figure with much detail needs room. In a div with the class `.column-page`, it runs from the
+left of the text to the right edge of the margin. The classes `.column-body-outset` and
+`.column-screen` give a little more width, and the whole window.
+
+On a phone there is no margin. The notes then follow the paragraph that cites them, and a wide
+figure takes the width of the text.

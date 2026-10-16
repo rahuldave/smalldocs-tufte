@@ -26,6 +26,7 @@ website:
           - guide/install.qmd
           - guide/typography.qmd
           - guide/figures.qmd
+          - guide/side-notes.qmd
           - guide/code.qmd
   page-footer:
     left: "The look of [Tufte CSS](https://edwardtufte.github.io/tufte-css/), MIT."
@@ -33,4 +34,5 @@ website:
 
 theme: tufte
 toc: true
+reference-location: margin
 code-copy: true
