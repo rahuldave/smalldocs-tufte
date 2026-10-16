@@ -1,0 +1,8 @@
+---
+title: Notes
+description: Short posts, newest first, as a listing.
+listing:
+  contents: "*.qmd"
+  sort: "date desc"
+  categories: true
+---

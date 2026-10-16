@@ -1,0 +1,11 @@
+---
+title: Sparklines
+subtitle: Graphics the size of a word
+date: 2026-10-12
+author: Rahul Dave
+categories: [graphics, type]
+---
+
+A sparkline is a line chart set in the text, about as tall as a capital
+letter. It shows a trend where the reader needs it, beside the number that it
+explains.

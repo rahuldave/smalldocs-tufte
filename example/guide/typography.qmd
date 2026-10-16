@@ -1,0 +1,54 @@
+---
+title: Typography
+description: Headings, text, quotations, lists and callouts.
+---
+
+Tufte's books set the text in a single face, in a few sizes, with italic for
+the headings and for emphasis. There is no bold heading and no coloured bar.
+The hierarchy comes from size and space alone.
+
+## A section heading
+
+A second-level heading is in italic and in the normal weight. It has no rule
+under it; the space above it is enough to start a new part of the page.
+
+### A smaller heading
+
+The third level is smaller, and still in italic. Below it the text goes on
+in the same size as before, so that a reader moves from the heading to the
+text with no change of voice.
+
+## Text
+
+A paragraph has a generous leading, about one and a half times the size of
+the type. *Emphasis* is in italic, and **strong text** is in bold, which the
+theme keeps for the rare word that must stand out. Numbers such as 1983 and
+2006 use lining figures.
+
+- A list keeps the size of the text.
+- Its items have the same leading as a paragraph.
+- A long item wraps under its own first word, not under the bullet, so that
+  the column keeps a clean left edge.
+
+> Above all else show the data. A quotation is set in from the left, with no
+> rule beside it.
+
+## Callouts
+
+::: {.callout-note}
+A note has a thin rule at its left in a muted blue, and no tinted box.
+:::
+
+::: {.callout-warning}
+## A warning with a title
+The title is in italic, the colour is a dark ochre.
+:::
+
+::: {.callout-important}
+An important callout uses a deep red.
+:::
+
+::: {.callout-tip collapse="true"}
+## A tip that folds
+The body of a callout can fold away under its title.
+:::

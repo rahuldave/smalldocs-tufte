@@ -1,52 +1,41 @@
 ---
-title: A page in the Tufte theme
+title: A Tufte theme for smalldocs
 subtitle: Type, measure and rules after Tufte CSS
 ---
 
-This page shows the theme. The text is set in ET Book, on a paper that is
-not quite white. The lines are short, so the eye finds the next one. A
-[link](https://edwardtufte.github.io/tufte-css/) is the colour of the text,
+This site shows the theme. The text is set in ET Book, a face cut for Edward
+Tufte's books, on a paper that is not quite white. The column is narrow, so a
+line holds about seventy letters and the eye finds the start of the next one.
+A [link](https://edwardtufte.github.io/tufte-css/) is the colour of the text,
 with a thin rule under it.
 
-## Headings
+The theme takes little away from the page and adds less. The navbar has the
+colour of the paper. The sidebar and the table of contents are small and grey,
+and the current page is in italic. Switch to the dark mode with the button in
+the navbar: the paper turns to near black, as in Tufte CSS.
 
-A second-level heading is in italic, as in Tufte's books. So is a heading of
-the third level.
+## Use it
 
-### A smaller heading
+Add the theme to a smalldocs project, and name it in `_smalldocs.yml`:
 
-Each heading has the normal weight. There is no rule under it.
-
-## Code
-
-Code is set in Consolas, a little smaller than the text, as in `print(x)`.
-
-```python
-def mean(xs: list[float]) -> float:
-    "The mean of the numbers."
-    return sum(xs) / len(xs)
+```sh
+smalldocs add rahuldave/smalldocs-tufte
 ```
 
-## Callouts
+```yaml
+theme: tufte
+```
 
-::: {.callout-note}
-A note has a thin rule at its left, in a muted blue.
-:::
+The [guide](guide/install.qmd) has the details, and the
+[notes](notes/index.qmd) show a listing of posts.
 
-::: {.callout-warning}
-## A warning with a title
-The title is in italic.
-:::
+## What the pages show
 
-## A table
-
-A table has a heavy rule above and below, and a light one under the header.
-
-| Book                               | Year | Pages |
-|:-----------------------------------|-----:|------:|
-| The Visual Display of Quantitative Information | 1983 | 197 |
-| Envisioning Information            | 1990 | 126 |
-| Visual Explanations                | 1997 | 156 |
-| Beautiful Evidence                 | 2006 | 213 |
+| Page | What it shows |
+|:-----|:--------------|
+| [Install](guide/install.qmd) | Adding the theme, with smalldocs or with Quarto |
+| [Typography](guide/typography.qmd) | Headings, text, quotations, lists and callouts |
+| [Figures](guide/figures.qmd) | A figure with a caption, and tables |
+| [Code](guide/code.qmd) | Code blocks, inline code and tabs |
 
 > The commonality between science and art is in trying to see profoundly.

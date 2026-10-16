@@ -1,0 +1,11 @@
+---
+title: The data and the ink
+subtitle: Erase what does not inform
+date: 2026-10-10
+author: Rahul Dave
+categories: [design]
+---
+
+Much of the ink in a chart shows nothing: frames, grids, shadows and fills.
+Take each away in turn, and keep it out when the chart still says the same
+thing.

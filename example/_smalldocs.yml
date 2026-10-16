@@ -3,12 +3,33 @@ project:
 
 website:
   title: Tufte
+  description: A demo of the smalldocs-tufte theme
+  site-url: https://rahuldave.github.io/smalldocs-tufte/
+  repo-url: https://github.com/rahuldave/smalldocs-tufte
+  page-navigation: true
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: guide/install.qmd
+        text: Guide
+      - href: notes/index.qmd
+        text: Notes
+    tools:
+      - icon: github
+        href: https://github.com/rahuldave/smalldocs-tufte
+  sidebar:
+    style: floating
+    contents:
+      - section: Guide
+        contents:
+          - guide/install.qmd
+          - guide/typography.qmd
+          - guide/figures.qmd
+          - guide/code.qmd
   page-footer:
-    left: "A theme after Tufte CSS."
+    left: "The look of [Tufte CSS](https://edwardtufte.github.io/tufte-css/), MIT."
+    right: "Built with [smalldocs](https://github.com/rahuldave/smalldocs)."
 
 theme: tufte
 toc: true

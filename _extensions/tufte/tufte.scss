@@ -62,6 +62,8 @@ $callout-color-caution: #a0522d !default;
   --bs-code-color: #111;
   --bs-primary: #111; --bs-primary-rgb: 17, 17, 17;
   --bs-highlight-bg: #f5ecc4; --bs-highlight-color: #111;
+  --bs-primary-bg-subtle: #ecece2; --bs-primary-border-subtle: #cfcfc4; --bs-primary-text-emphasis: #111;
+  --bs-focus-ring-color: rgba(17, 17, 17, .2);
   /* Tufte's few colours, muted, for the callouts */
   --tufte-note: #3b5b7a; --tufte-tip: #3d6b3d; --tufte-warning: #9a7400; --tufte-important: #8b1a1a; --tufte-caution: #a0522d;
 }
@@ -99,6 +101,7 @@ a:hover { text-decoration-color: currentColor; }
 
 /* Headings: normal weight, h2 and h3 in italic */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: 400; line-height: 1.1; }
+h2, h3, .h2, .h3 { font-style: italic; }
 html main.content h1, html main.content h2, html main.content h3, html main.content h4, html main.content h5, html main.content h6 { font-weight: 400; }
 html .quarto-title h1.title { font-size: 3.2rem; font-weight: 400; line-height: 1.05; margin-bottom: .75rem; }
 html .quarto-title .subtitle { font-style: italic; font-size: 1.8rem; line-height: 1.2; margin-top: .5rem; }
@@ -130,9 +133,9 @@ html .quarto-figure figcaption, figcaption { font-size: 1.1rem; font-style: ital
 html main.content table { font-size: 1.15rem; }
 .table { --bs-table-bg: transparent; --bs-table-color: var(--bs-body-color); --bs-table-striped-bg: rgba(var(--bs-body-color-rgb), .03); --bs-table-hover-bg: rgba(var(--bs-body-color-rgb), .05); --bs-table-border-color: var(--bs-border-color); font-variant-numeric: tabular-nums; }
 /* Booktabs: a heavy rule above and below, a light one under the header, none between rows */
-main.content table.table { border-top: 2px solid var(--bs-body-color); border-bottom: 2px solid var(--bs-body-color); }
-main.content table.table > :not(caption) > * > * { border-bottom-width: 0; padding: .35rem .75rem; }
-main.content table.table > thead > tr > * { border-bottom: 1px solid var(--bs-body-color); font-weight: 400; font-style: italic; }
+table.table { border-top: 2px solid var(--bs-body-color); border-bottom: 2px solid var(--bs-body-color); }
+table.table > :not(caption) > * > * { border-bottom-width: 0; padding: .35rem .75rem; }
+table.table > thead > tr > * { border-bottom: 1px solid var(--bs-body-color); font-weight: 400; font-style: italic; }
 caption { font-style: italic; font-size: 1.1rem; color: var(--bs-secondary-color); }
 
 /* Code: Consolas, no box, a little smaller than the text */
@@ -212,7 +215,22 @@ html .quarto-grid-item:hover { box-shadow: none; border-color: var(--bs-body-col
 html .pagination-link { font-weight: 400; font-style: italic; }
 html .footer { font-size: 1.05rem; }
 .btn { border-radius: 0; }
-.btn-primary { --bs-btn-bg: var(--bs-body-color); --bs-btn-border-color: var(--bs-body-color); --bs-btn-color: var(--bs-body-bg); --bs-btn-hover-bg: var(--bs-emphasis-color); --bs-btn-hover-border-color: var(--bs-emphasis-color); --bs-btn-hover-color: var(--bs-body-bg); }
+.btn-primary { --bs-btn-bg: var(--bs-body-color); --bs-btn-border-color: var(--bs-body-color); --bs-btn-color: var(--bs-body-bg); --bs-btn-hover-bg: var(--bs-emphasis-color); --bs-btn-hover-border-color: var(--bs-emphasis-color); --bs-btn-hover-color: var(--bs-body-bg); --bs-btn-active-bg: var(--bs-emphasis-color); --bs-btn-active-border-color: var(--bs-emphasis-color); --bs-btn-active-color: var(--bs-body-bg); --bs-btn-disabled-bg: var(--bs-body-color); --bs-btn-disabled-border-color: var(--bs-body-color); --bs-btn-disabled-color: var(--bs-body-bg); }
+
+/* Bootstrap's components, on any page: ink in place of Bootstrap's blue */
+.btn-outline-primary { --bs-btn-color: var(--bs-body-color); --bs-btn-border-color: var(--bs-body-color); --bs-btn-hover-color: var(--bs-body-bg); --bs-btn-hover-bg: var(--bs-body-color); --bs-btn-hover-border-color: var(--bs-body-color); --bs-btn-active-color: var(--bs-body-bg); --bs-btn-active-bg: var(--bs-body-color); --bs-btn-active-border-color: var(--bs-body-color); --bs-btn-disabled-color: var(--bs-body-color); --bs-btn-disabled-border-color: var(--bs-body-color); }
+.btn-link { --bs-btn-color: var(--bs-link-color); --bs-btn-hover-color: var(--bs-link-hover-color); }
+.text-bg-primary { color: var(--bs-body-bg) !important; }
+.list-group { --bs-list-group-bg: transparent; --bs-list-group-active-bg: var(--bs-body-color); --bs-list-group-active-border-color: var(--bs-body-color); --bs-list-group-active-color: var(--bs-body-bg); }
+.pagination { --bs-pagination-bg: transparent; --bs-pagination-color: var(--bs-body-color); --bs-pagination-hover-color: var(--bs-body-color); --bs-pagination-focus-color: var(--bs-body-color); --bs-pagination-focus-box-shadow: none; --bs-pagination-active-bg: var(--bs-body-color); --bs-pagination-active-border-color: var(--bs-body-color); --bs-pagination-active-color: var(--bs-body-bg); --bs-pagination-border-radius: 0; }
+.progress, .progress-stacked { --bs-progress-bar-bg: var(--bs-body-color); --bs-progress-bar-color: var(--bs-body-bg); --bs-progress-bg: var(--bs-secondary-bg); --bs-progress-border-radius: 0; }
+.nav-pills { --bs-nav-pills-link-active-bg: var(--bs-body-color); --bs-nav-pills-link-active-color: var(--bs-body-bg); --bs-nav-pills-border-radius: 0; }
+.form-check-input:checked, .form-check-input[type=checkbox]:indeterminate { background-color: #5a5a55; border-color: #5a5a55; }
+.form-check-input:focus, .form-range:focus::-webkit-slider-thumb { box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color); border-color: var(--bs-body-color); }
+.form-range::-webkit-slider-thumb { background-color: var(--bs-body-color); }
+.form-range::-moz-range-thumb { background-color: var(--bs-body-color); }
+.accordion { --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color); --bs-accordion-active-color: var(--bs-body-color); }
+.badge { --bs-badge-font-weight: 400; }
 
 @media (max-width: 991.98px) {
   html .quarto-title h1.title { font-size: 2.4rem; }

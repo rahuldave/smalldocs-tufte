@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" font-family="Palatino, Georgia, serif" font-size="13">
+  <rect width="640" height="220" fill="#fffff8"/>
+  <g fill="none" stroke="#999" stroke-width="1">
+    <line x1="40" y1="180" x2="620" y2="180"/>
+  </g>
+  <polyline fill="none" stroke="#111" stroke-width="1.5" points="40,120 88,110 136,96 184,70 232,52 280,40 328,46 376,64 424,90 472,112 520,126 568,130 616,124"/>
+  <circle cx="280" cy="40" r="3.5" fill="#8b1a1a"/>
+  <text x="290" y="36" fill="#8b1a1a" font-style="italic">the wettest month, 141 mm</text>
+  <circle cx="568" cy="130" r="3.5" fill="#111"/>
+  <text x="520" y="150" fill="#555" font-style="italic">the driest, 50 mm</text>
+  <g fill="#555" text-anchor="middle">
+    <text x="40" y="200">Jan</text><text x="184" y="200">Apr</text><text x="328" y="200">Jul</text><text x="472" y="200">Oct</text><text x="616" y="200">Jan</text>
+  </g>
+</svg>

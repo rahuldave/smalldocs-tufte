@@ -1,0 +1,51 @@
+---
+title: Install
+description: Add the theme, with smalldocs or with Quarto.
+---
+
+The theme is one folder, `_extensions/tufte/`. It holds a stylesheet for each
+mode, the ET Book fonts, and the same rules written for Quarto.
+
+## With smalldocs
+
+```sh
+smalldocs add rahuldave/smalldocs-tufte
+```
+
+This copies the folder into `_extensions/tufte/` and notes where it came from.
+Then name the theme in `_smalldocs.yml`:
+
+```yaml
+theme: tufte
+```
+
+In a `_quarto.yml`, the line goes under `smalldocs:`, which Quarto ignores:
+
+```yaml
+smalldocs:
+  theme: tufte
+```
+
+::: {.callout-tip}
+## Keep it up to date
+`smalldocs themes` lists the themes of a project, with the command that
+fetches each one again.
+:::
+
+## With Quarto
+
+```sh
+quarto add rahuldave/smalldocs-tufte
+```
+
+```yaml
+format:
+  tufte-html:
+    toc: true
+```
+
+## On any Bootstrap page
+
+Each stylesheet is a whole Bootstrap 5.3 with the Tufte rules after it, as a
+Bootswatch theme is. So a page that links to `tufte.css` in place of
+`bootstrap.min.css` gets the theme. Keep the `et-book` folder next to it.

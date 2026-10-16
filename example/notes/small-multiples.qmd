@@ -1,0 +1,11 @@
+---
+title: Small multiples
+subtitle: The same frame, many times
+date: 2026-10-14
+author: Rahul Dave
+categories: [graphics]
+---
+
+Small multiples repeat one simple chart for each group, with the same scales.
+The eye then compares the groups at a glance, and the reader learns the frame
+once and uses it many times.

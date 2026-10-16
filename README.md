@@ -6,6 +6,8 @@ The text is set in ET Book on a cream paper, in a narrow column. Headings are in
 italic, links are underlined in the colour of the text, and tables have only three
 rules. The theme has a light mode and a dark mode.
 
+See it live: **<https://rahuldave.github.io/smalldocs-tufte/>**, a demo site built from `example/`.
+
 ![A page in the Tufte theme](screenshot.png)
 
 ## With smalldocs
@@ -50,14 +52,32 @@ The Quarto theme is the same rules, written as Sass layers in `tufte.scss`
 (light) and `tufte-dark.scss` (dark). Quarto follows the mode that the browser
 prefers.
 
-## The example
+## On any Bootstrap page
 
-`example/` is a small site that uses the theme. To build it:
+`tufte.css` and `tufte-dark.css` are whole Bootstrap 5.3 stylesheets, as
+Bootswatch themes are. Link one in place of `bootstrap.min.css`, and keep the
+`et-book` folder next to it. Buttons, alerts, cards, lists, pagination and
+progress bars take the ink of the text in place of Bootstrap's blue.
+
+## The demo site
+
+`example/` is the demo site, with a few guide pages and a listing of notes. To
+build it, copy the theme into it, then render it:
 
 ```sh
-smalldocs add . --dir example
+smalldocs add . --dir example --force
 smalldocs render example
 ```
+
+To publish it to the `gh-pages` branch: `smalldocs publish gh-pages example`.
+
+## Tests
+
+`tests/test_theme.py` checks that each stylesheet is a whole Bootstrap 5.3
+theme: it has Bootstrap's banner, every `--bs-*` variable that a Bootswatch
+theme sets, a dark colour mode, the core components, and no `url()` that points
+outside the folder. Run it with `pytest tests`. It needs only Python and
+pytest, and GitHub runs it on each push.
 
 ## What is in the folder
 

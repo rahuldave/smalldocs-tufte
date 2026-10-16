@@ -1,0 +1,47 @@
+---
+title: Code
+description: Code blocks, inline code and tabs.
+---
+
+Code is set in Consolas, or the nearest monospace face, a little smaller than
+the text. Inline code such as `len(xs)` has no box around it, only its face.
+
+## A code block
+
+A block has a faint tint and a thin rule at its left. The colours of the
+syntax follow Quarto's, and change with the mode.
+
+```python
+def sparkline(values: list[float], width: int = 100) -> list[tuple[float, float]]:
+    "The points of a sparkline: x from 0 to width, y from 0 to 1."
+    lo, hi = min(values), max(values)
+    step = width / (len(values) - 1)
+    return [(i * step, (v - lo) / (hi - lo or 1)) for i, v in enumerate(values)]
+```
+
+## Tabs
+
+::: {.panel-tabset}
+## Python
+
+```python
+print(sum([78, 84, 93]) / 3)
+```
+
+## Shell
+
+```sh
+smalldocs render example
+```
+
+## Prose
+
+A tab can hold text as well as code.
+:::
+
+## A diff
+
+```diff
+-theme: cosmo
++theme: tufte
+```
