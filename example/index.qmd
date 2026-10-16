@@ -1,0 +1,52 @@
+---
+title: A page in the Tufte theme
+subtitle: Type, measure and rules after Tufte CSS
+---
+
+This page shows the theme. The text is set in ET Book, on a paper that is
+not quite white. The lines are short, so the eye finds the next one. A
+[link](https://edwardtufte.github.io/tufte-css/) is the colour of the text,
+with a thin rule under it.
+
+## Headings
+
+A second-level heading is in italic, as in Tufte's books. So is a heading of
+the third level.
+
+### A smaller heading
+
+Each heading has the normal weight. There is no rule under it.
+
+## Code
+
+Code is set in Consolas, a little smaller than the text, as in `print(x)`.
+
+```python
+def mean(xs: list[float]) -> float:
+    "The mean of the numbers."
+    return sum(xs) / len(xs)
+```
+
+## Callouts
+
+::: {.callout-note}
+A note has a thin rule at its left, in a muted blue.
+:::
+
+::: {.callout-warning}
+## A warning with a title
+The title is in italic.
+:::
+
+## A table
+
+A table has a heavy rule above and below, and a light one under the header.
+
+| Book                               | Year | Pages |
+|:-----------------------------------|-----:|------:|
+| The Visual Display of Quantitative Information | 1983 | 197 |
+| Envisioning Information            | 1990 | 126 |
+| Visual Explanations                | 1997 | 156 |
+| Beautiful Evidence                 | 2006 | 213 |
+
+> The commonality between science and art is in trying to see profoundly.

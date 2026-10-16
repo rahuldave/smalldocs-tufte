@@ -1,0 +1,4 @@
+_site/
+.quarto/
+example/_extensions/
+.DS_Store

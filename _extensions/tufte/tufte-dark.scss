@@ -1,0 +1,45 @@
+/*-- scss:defaults --*/
+// Tufte CSS for Quarto: the dark colours, as Tufte CSS's dark mode. Use it after tufte.scss.
+$body-bg: #151515 !default;
+$body-color: #ddd !default;
+$primary: #ddd !default;
+$link-color: #ddd !default;
+$link-hover-color: #e8b4a0 !default;
+$border-color: #3a3a37 !default;
+$navbar-bg: $body-bg !default;
+$navbar-fg: rgba(221, 221, 221, .62) !default;
+$navbar-hl: #ddd !default;
+$footer-bg: $body-bg !default;
+$footer-fg: rgba(221, 221, 221, .62) !default;
+$sidebar-bg: $body-bg !default;
+$code-color: #ddd !default;
+$toc-color: #ddd !default;
+$callout-color-note: #8fb0d0 !default;
+$callout-color-tip: #93c093 !default;
+$callout-color-warning: #d8b65a !default;
+$callout-color-important: #e08a8a !default;
+$callout-color-caution: #d99a6c !default;
+
+/*-- scss:rules --*/
+
+/* ---------------------------------------------------------------- Tufte: the dark colours, as Tufte CSS's dark mode */
+
+:root, [data-bs-theme=light], [data-bs-theme=dark] {
+  color-scheme: dark;
+  --bs-body-bg: #151515; --bs-body-bg-rgb: 21, 21, 21;
+  --bs-body-color: #ddd; --bs-body-color-rgb: 221, 221, 221;
+  --bs-emphasis-color: #fff; --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-heading-color: #ddd;
+  --bs-secondary-color: rgba(221, 221, 221, .62); --bs-secondary-color-rgb: 221, 221, 221;
+  --bs-tertiary-color: rgba(221, 221, 221, .45);
+  --bs-secondary-bg: #262624; --bs-secondary-bg-rgb: 38, 38, 36;
+  --bs-tertiary-bg: #1d1d1c; --bs-tertiary-bg-rgb: 29, 29, 28;
+  --bs-border-color: #3a3a37; --bs-border-color-translucent: rgba(221, 221, 221, .15);
+  --bs-link-color: #ddd; --bs-link-color-rgb: 221, 221, 221;
+  --bs-link-hover-color: #e8b4a0; --bs-link-hover-color-rgb: 232, 180, 160;
+  --bs-code-color: #ddd;
+  --bs-primary: #ddd; --bs-primary-rgb: 221, 221, 221;
+  --bs-highlight-bg: #4a4024; --bs-highlight-color: #eee;
+  --bs-form-control-bg: #1d1d1c;
+  --tufte-note: #8fb0d0; --tufte-tip: #93c093; --tufte-warning: #d8b65a; --tufte-important: #e08a8a; --tufte-caution: #d99a6c;
+}
