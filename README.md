@@ -91,29 +91,35 @@ sh scripts/build.sh
 ```
 
 The script writes `tufte.css` and `tufte-dark.css` for smalldocs, and `tufte.scss` and `tufte-dark.scss` for
-Quarto. `scripts/dark_root.py` puts Bootstrap's dark colours on the whole page in the dark file, and
+Quarto. `scripts/dark_root.py` puts Bootstrap's dark colours on the whole page in the dark file.
 `scripts/embed_fonts.py` puts the fonts inside the Sass files, because Quarto cannot find a font file next to
 the theme. The tests on GitHub build the files again and fail if they differ from the ones in the repository.
 
 ## The demo site
 
 `example/` is the demo site, with a few guide pages and a listing of notes. To
-build it, copy the theme into it, then render it:
+build it, copy the theme into it, then render it. `smalldocs add .` copies the
+last commit, so commit a change to the theme first:
 
 ```sh
 smalldocs add . --dir example --force
 smalldocs render example
 ```
 
-To publish it to the `gh-pages` branch: `smalldocs publish gh-pages example`.
+`smalldocs publish gh-pages example` publishes it to the `gh-pages` branch.
 
 ## Tests
 
 `tests/test_theme.py` checks that each stylesheet is a whole Bootstrap 5.3
-theme: it has Bootstrap's banner, every `--bs-*` variable that a Bootswatch
-theme sets, a dark colour mode, the core components, and no `url()` that points
+theme. Each has Bootstrap's banner, every `--bs-*` variable that a Bootswatch
+theme sets, a dark colour mode and the core components. No `url()` points
 outside the folder. Run it with `pytest tests`. It needs only Python and
 pytest, and GitHub runs it on each push.
+
+On each push and pull request, and each Monday, GitHub also builds `example/`
+with the latest smalldocs from PyPI. It builds with `--strict`, so the build
+fails on any warning. A new release of smalldocs that breaks the theme shows
+within a week.
 
 ## What is in the folder
 

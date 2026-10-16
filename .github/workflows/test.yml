@@ -1,5 +1,11 @@
 name: test
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  # Each Monday, so that a new release of smalldocs that breaks the example shows within a week
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -12,3 +18,8 @@ jobs:
       - run: pytest -v tests
       - name: The built files match their sources
         run: sh scripts/build.sh && git diff --exit-code -- _extensions/tufte
+      - name: The example site builds with the latest smalldocs, with no warning
+        run: |
+          pip install smalldocs
+          smalldocs add . --dir example --force
+          smalldocs render example --strict
