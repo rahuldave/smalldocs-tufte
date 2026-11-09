@@ -36,3 +36,13 @@ export function inspectStateActions() {
       hoverFill: style.getPropertyValue('--bs-btn-hover-bg').trim() };
   });
 }
+
+/** Read actual code descendants; syntax colors are reported, never overwritten. */
+export function inspectCodeProfile() {
+  return Array.from(document.querySelectorAll('main.content div.sourceCode, main.content pre, main.content pre code, main.content pre code span')).map(element => {
+    const style = getComputedStyle(element);
+    return { tag: element.tagName, id: element.id, classes: element.className,
+      fontSize: style.fontSize, lineHeight: style.lineHeight, color: style.color,
+      padding: style.padding, fontFamily: style.fontFamily };
+  });
+}

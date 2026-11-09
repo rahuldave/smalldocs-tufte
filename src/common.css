@@ -127,3 +127,19 @@ html .btn-outline-secondary {
   --bs-btn-active-color: var(--tf-secondary-action); --bs-btn-active-bg: var(--tf-panel); --bs-btn-active-border-color: var(--tf-control-boundary);
   --bs-btn-disabled-color: var(--tf-disabled-ink); --bs-btn-disabled-bg: var(--tf-disabled-fill); --bs-btn-disabled-border-color: var(--tf-control-boundary); --bs-btn-disabled-opacity: 1;
 }
+/* Renderer code selectors must not reinterpret the reference ladder or add boxes. */
+html body #quarto-content main.content div.sourceCode { padding: var(--tf-gap-panel); }
+html body #quarto-content main.content pre,
+html body #quarto-content main.content pre code,
+html body #quarto-content main.content pre code span {
+  font-family: var(--tf-font-code);
+  font-size: var(--tf-size-code);
+  line-height: var(--tf-line-code);
+}
+html body #quarto-content main.content pre,
+html body #quarto-content main.content pre code {
+  color: var(--tf-code-ink);
+  padding: 0;
+}
+/* Line wrappers inherit plain ink; nested syntax classes keep their own hues. */
+html body #quarto-content main.content pre code > span[id] { color: var(--tf-code-ink); }

@@ -156,3 +156,20 @@ def test_semantic_action_variants_publish_to_both_consumers() -> None:
     assert "--bs-btn-disabled-bg: var(--tf-disabled-fill)" in common
     for file in ["tufte.css", "tufte-dark.css", "tufte.scss"]:
         assert common in (ROOT / "_extensions/tufte" / file).read_text()
+
+
+def test_code_profile_covers_renderer_descendants_without_overwriting_syntax() -> None:
+    """Keep code line wrappers at the declared size without flattening token hues."""
+    common = (ROOT / "src/common.css").read_text()
+    assert "html body #quarto-content main.content pre code span" in common
+    assert "font-size: var(--tf-size-code);" in common
+    assert "line-height: var(--tf-line-code);" in common
+    assert (
+        "html body #quarto-content main.content pre code > span[id] { color: var(--tf-code-ink); }"
+        in common
+    )
+    assert "pre code span { color:" not in common
+    assert "main.content div.sourceCode { padding: var(--tf-gap-panel); }" in common
+    assert DATA["typography"]["profiles"]["reading"]["code"] == 16
+    assert DATA["typography"]["lineHeights"]["code"] == 1.5
+    assert DATA["spacing"]["profiles"]["reading"]["panel"] == 0
