@@ -194,3 +194,19 @@ against uncommitted changes does not verify those changes. SmallDocs 0.5.5 is
 pinned for the strict acceptance build; Quarto must be installed separately.
 Quarto consumes scoped Sass layers and embedded fonts, never the standalone
 Bootstrap stylesheet. Fonts and their original licenses remain unchanged.
+
+### Semantic actions (0.2.1)
+
+Filled and outline success, warning, danger and information buttons reuse the
+contract's state fill/ink pairs with the tested neutral control boundary around the action. Hover, keyboard focus and active
+states reverse the same tested ink/fill pair; disabled actions use opaque
+neutral disabled roles. Outline-secondary stays neutral. Retain a state word
+or icon on each action: the fixture labels examples explicitly. No stock
+Bootstrap colors or vendor files are changed.
+
+The acceptance page includes base, active, native-disabled and disabled-active examples for all
+nine variants. `tests/browser-state-actions.mjs` exports `inspectStateActions`
+for CUA's read-only `tab.playwright.evaluate`; it reports actual computed text,
+background, boundary and contrast for each action. Run it on each real consumer
+in both modes, and after normal keyboard focus or pointer interaction. Narrow
+layout is checked manually through the existing 390px wrapper.
