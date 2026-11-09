@@ -62,3 +62,46 @@ Information uses words as well as a distinguishing rule.
 <div class="alert alert-info">i Information: This is a new candidate state.</div>
 <p><mark>Optional blue highlight with paired ink.</mark></p>
 ```
+
+## Semantic state actions
+
+```{=html}
+<div id="state-actions">
+<button id="state-success-base" type="button" class="btn btn-success state-action">✓ Success filled base</button>
+<button id="state-success-active" type="button" class="btn btn-success state-action active" aria-pressed="true">✓ Success filled active</button>
+<button id="state-success-disabled" type="button" class="btn btn-success state-action" disabled>✓ Success filled disabled</button>
+<button id="state-outline-success-base" type="button" class="btn btn-outline-success state-action">✓ Success outline base</button>
+<button id="state-outline-success-active" type="button" class="btn btn-outline-success state-action active" aria-pressed="true">✓ Success outline active</button>
+<button id="state-outline-success-disabled" type="button" class="btn btn-outline-success state-action" disabled>✓ Success outline disabled</button>
+<button id="state-warning-base" type="button" class="btn btn-warning state-action">! Warning filled base</button>
+<button id="state-warning-active" type="button" class="btn btn-warning state-action active" aria-pressed="true">! Warning filled active</button>
+<button id="state-warning-disabled" type="button" class="btn btn-warning state-action" disabled>! Warning filled disabled</button>
+<button id="state-outline-warning-base" type="button" class="btn btn-outline-warning state-action">! Warning outline base</button>
+<button id="state-outline-warning-active" type="button" class="btn btn-outline-warning state-action active" aria-pressed="true">! Warning outline active</button>
+<button id="state-outline-warning-disabled" type="button" class="btn btn-outline-warning state-action" disabled>! Warning outline disabled</button>
+<button id="state-danger-base" type="button" class="btn btn-danger state-action">× Error filled base</button>
+<button id="state-danger-active" type="button" class="btn btn-danger state-action active" aria-pressed="true">× Error filled active</button>
+<button id="state-danger-disabled" type="button" class="btn btn-danger state-action" disabled>× Error filled disabled</button>
+<button id="state-outline-danger-base" type="button" class="btn btn-outline-danger state-action">× Error outline base</button>
+<button id="state-outline-danger-active" type="button" class="btn btn-outline-danger state-action active" aria-pressed="true">× Error outline active</button>
+<button id="state-outline-danger-disabled" type="button" class="btn btn-outline-danger state-action" disabled>× Error outline disabled</button>
+<button id="state-info-base" type="button" class="btn btn-info state-action">i Information filled base</button>
+<button id="state-info-active" type="button" class="btn btn-info state-action active" aria-pressed="true">i Information filled active</button>
+<button id="state-info-disabled" type="button" class="btn btn-info state-action" disabled>i Information filled disabled</button>
+<button id="state-outline-info-base" type="button" class="btn btn-outline-info state-action">i Information outline base</button>
+<button id="state-outline-info-active" type="button" class="btn btn-outline-info state-action active" aria-pressed="true">i Information outline active</button>
+<button id="state-outline-info-disabled" type="button" class="btn btn-outline-info state-action" disabled>i Information outline disabled</button>
+<button id="state-outline-secondary-base" type="button" class="btn btn-outline-secondary state-action">· Neutral outline base</button>
+<button id="state-outline-secondary-active" type="button" class="btn btn-outline-secondary state-action active" aria-pressed="true">· Neutral outline active</button>
+<button id="state-outline-secondary-disabled" type="button" class="btn btn-outline-secondary state-action" disabled>· Neutral outline disabled</button>
+<button id="state-success-disabled-active" type="button" class="btn btn-success state-action active" disabled aria-pressed="true">✓ Success disabled active</button>
+<button id="state-outline-success-disabled-active" type="button" class="btn btn-outline-success state-action active" disabled aria-pressed="true">✓ Success disabled active</button>
+<button id="state-warning-disabled-active" type="button" class="btn btn-warning state-action active" disabled aria-pressed="true">! Warning disabled active</button>
+<button id="state-outline-warning-disabled-active" type="button" class="btn btn-outline-warning state-action active" disabled aria-pressed="true">! Warning disabled active</button>
+<button id="state-danger-disabled-active" type="button" class="btn btn-danger state-action active" disabled aria-pressed="true">× Error disabled active</button>
+<button id="state-outline-danger-disabled-active" type="button" class="btn btn-outline-danger state-action active" disabled aria-pressed="true">× Error disabled active</button>
+<button id="state-info-disabled-active" type="button" class="btn btn-info state-action active" disabled aria-pressed="true">i Information disabled active</button>
+<button id="state-outline-info-disabled-active" type="button" class="btn btn-outline-info state-action active" disabled aria-pressed="true">i Information disabled active</button>
+<button id="state-outline-secondary-disabled-active" type="button" class="btn btn-outline-secondary state-action active" disabled aria-pressed="true">· Neutral disabled active</button>
+</div>
+```

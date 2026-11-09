@@ -123,3 +123,36 @@ def test_profile_mutation_drives_both_renderers(tmp_path, monkeypatch) -> None:
     assert "font-size: var(--tf-size-body)" in common
     assert "line-height: var(--tf-line-reading)" in common
     assert "margin-top: var(--tf-gap-group)" in common
+
+
+@pytest.mark.parametrize("mode", ["light", "dark"])
+def test_semantic_actions_use_safe_existing_pairs(mode: str) -> None:
+    """Normal and reversed active/hover pairs reuse approved opaque state colors."""
+    data = DATA["modes"][mode]
+    role = lambda key: data["swatches"][data["roles"][key]]
+    for state, triple in data["states"].items():
+        assert contrast(triple["ink"], triple["fill"]) >= 5
+        # Reversing this pair supplies the same reserve on hover and active.
+        assert contrast(triple["fill"], triple["ink"]) >= 5
+        for surface in ["paper", "panel", "code"]:
+            assert contrast(triple["ink"], role(surface)) >= 5
+        assert contrast(triple["boundary"], role("paper")) >= 3
+    assert contrast(role("secondary-action"), role("panel")) >= 5
+    assert contrast(role("disabled-ink"), role("disabled-fill")) >= 5
+
+
+def test_semantic_action_variants_publish_to_both_consumers() -> None:
+    """Every filled/outline action and its active/disabled fixture is emitted."""
+    common = (ROOT / "src/common.css").read_text()
+    fixture = (ROOT / "tests/fixtures/components.qmd").read_text()
+    for variant in ["success", "warning", "danger", "info"]:
+        assert f"--tf-action-fill: var(--tf-{variant}-fill)" in common
+        for prefix in ["", "outline-"]:
+            for behavior in ["base", "active", "disabled", "disabled-active"]:
+                assert f'id="state-{prefix}{variant}-{behavior}"' in fixture
+    assert "--tf-action-boundary: var(--tf-control-boundary)" in common
+    assert "html .btn-outline-secondary" in common
+    assert "--bs-btn-active-bg: var(--tf-action-ink)" in common
+    assert "--bs-btn-disabled-bg: var(--tf-disabled-fill)" in common
+    for file in ["tufte.css", "tufte-dark.css", "tufte.scss"]:
+        assert common in (ROOT / "_extensions/tufte" / file).read_text()

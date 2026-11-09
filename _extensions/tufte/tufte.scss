@@ -278,6 +278,25 @@ html .navbar .nav-link { padding: var(--tf-space-8) var(--tf-space-16); }
 html .navbar-toggler { padding: var(--tf-space-8) var(--tf-space-12); }
 html #TOC .nav-link { padding: var(--tf-space-4) var(--tf-space-8); }
 html .sidebar-item-container { padding-block: var(--tf-space-4); }
+
+/* Semantic actions use the approved state pairs, never Bootstrap's stock fills. */
+html :is(.btn-success,.btn-outline-success) { --tf-action-fill: var(--tf-success-fill); --tf-action-ink: var(--tf-success-ink); --tf-action-boundary: var(--tf-control-boundary); }
+html :is(.btn-warning,.btn-outline-warning) { --tf-action-fill: var(--tf-warning-fill); --tf-action-ink: var(--tf-warning-ink); --tf-action-boundary: var(--tf-control-boundary); }
+html :is(.btn-danger,.btn-outline-danger) { --tf-action-fill: var(--tf-danger-fill); --tf-action-ink: var(--tf-danger-ink); --tf-action-boundary: var(--tf-control-boundary); }
+html :is(.btn-info,.btn-outline-info) { --tf-action-fill: var(--tf-info-fill); --tf-action-ink: var(--tf-info-ink); --tf-action-boundary: var(--tf-control-boundary); }
+html :is(.btn-success,.btn-warning,.btn-danger,.btn-info,.btn-outline-success,.btn-outline-warning,.btn-outline-danger,.btn-outline-info) {
+  --bs-btn-color: var(--tf-action-ink); --bs-btn-bg: var(--tf-action-fill); --bs-btn-border-color: var(--tf-action-boundary);
+  --bs-btn-hover-color: var(--tf-action-fill); --bs-btn-hover-bg: var(--tf-action-ink); --bs-btn-hover-border-color: var(--tf-control-boundary);
+  --bs-btn-active-color: var(--tf-action-fill); --bs-btn-active-bg: var(--tf-action-ink); --bs-btn-active-border-color: var(--tf-control-boundary);
+  --bs-btn-disabled-color: var(--tf-disabled-ink); --bs-btn-disabled-bg: var(--tf-disabled-fill); --bs-btn-disabled-border-color: var(--tf-control-boundary); --bs-btn-disabled-opacity: 1;
+}
+html :is(.btn-outline-success,.btn-outline-warning,.btn-outline-danger,.btn-outline-info) { --bs-btn-bg: transparent; }
+html .btn-outline-secondary {
+  --bs-btn-color: var(--tf-secondary-action); --bs-btn-bg: transparent; --bs-btn-border-color: var(--tf-control-boundary);
+  --bs-btn-hover-color: var(--tf-secondary-action); --bs-btn-hover-bg: var(--tf-panel); --bs-btn-hover-border-color: var(--tf-control-boundary);
+  --bs-btn-active-color: var(--tf-secondary-action); --bs-btn-active-bg: var(--tf-panel); --bs-btn-active-border-color: var(--tf-control-boundary);
+  --bs-btn-disabled-color: var(--tf-disabled-ink); --bs-btn-disabled-bg: var(--tf-disabled-fill); --bs-btn-disabled-border-color: var(--tf-control-boundary); --bs-btn-disabled-opacity: 1;
+}
 /* Quarto-only selectors; shared component rules remain in common.css. */
 html .navbar { background: var(--tf-paper); border-bottom: 1px solid var(--tf-decorative-line); }
 html .navbar :is(.navbar-brand,.navbar-title,.nav-link) { color: var(--tf-ink); }
