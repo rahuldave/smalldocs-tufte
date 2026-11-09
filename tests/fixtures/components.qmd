@@ -1,0 +1,64 @@
+---
+title: Foundation acceptance
+subtitle: A reading page with interactive components
+---
+
+## Reading rhythm
+
+A paragraph of ET Book prose with an [underlined achromatic link](#controls), **bold emphasis**, and `inline_code`. It keeps the quiet Tufte character while supporting readable controls and notes.[^note]
+
+[^note]: A readable margin note should remain beside the paragraph on a wide screen and flow inline on a narrow screen.
+
+::: {.column-margin}
+A second margin note with [a link](#states), ordinary words and a short label.
+:::
+
+::: {.card}
+### An unboxed group
+
+This group has no decorative card border, fill, shadow, radius or inner padding.
+:::
+
+```python
+message = "Readable code"
+print(message)
+```
+
+| Variable | Value |
+| --- | --- |
+| Body | 20px |
+| Measure | 640px |
+
+::: {.callout-note title="Information"}
+Information uses words as well as a distinguishing rule.
+:::
+
+## Controls
+
+```{=html}
+<form id="acceptance-form">
+<label for="name" class="form-label">Name</label>
+<input id="name" class="form-control" value="A readable field">
+<label for="invalid" class="form-label">Required project</label>
+<input id="invalid" class="form-control" aria-invalid="true" aria-describedby="project-error">
+<p id="project-error" class="invalid-feedback">× Error: Enter a project name.</p>
+<label><input id="check" class="form-check-input" type="checkbox"> Include notes</label>
+<p><button id="primary" type="button" class="btn btn-primary" onclick="document.getElementById('result').textContent='✓ Action completed'">Primary action</button>
+<button id="secondary" type="button" class="btn btn-secondary">Secondary action</button>
+<button id="disabled" type="button" class="btn btn-primary" disabled>Unavailable</button></p>
+<div role="tablist" aria-label="Reading choices">
+<button id="selected" type="button" class="btn btn-secondary" role="tab" aria-selected="true" onclick="const selected=this.getAttribute('aria-selected')!=='true';this.setAttribute('aria-selected',String(selected));this.textContent=selected?'✓ Selected reading':'Select reading'">✓ Selected reading</button>
+</div>
+<p id="result" role="status">Ready for action.</p>
+</form>
+```
+
+## States
+
+```{=html}
+<div class="alert alert-success">✓ Success: Changes saved.</div>
+<div class="alert alert-warning">! Warning: Review this choice.</div>
+<div class="alert alert-danger" role="alert">× Error: Correct the field above.</div>
+<div class="alert alert-info">i Information: This is a new candidate state.</div>
+<p><mark>Optional blue highlight with paired ink.</mark></p>
+```

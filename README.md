@@ -76,14 +76,15 @@ progress bars take the ink of the text in place of Bootstrap's blue.
 
 ## Building
 
-The four files in `_extensions/tufte/` are built. Do not edit them; edit the sources and build again:
+The CSS, Sass and foundation manifest in `_extensions/tufte/` are built. Do not edit them; edit the sources and build again:
 
 | Source | What it holds |
 |---|---|
 | `src/common.css` | The Tufte rules: type, measure, headings, links, tables, notes in the margin, navbar and sidebar |
-| `src/light-root.css`, `src/light-dark-parts.css`, `src/dark.css` | The colours of the light mode and the dark mode |
+| `src/foundations.json` | Authoritative versioned paired colors, role references, states, typography, spacing and shape; published verbatim as `foundations.json` |
+| `scripts/foundations.py` | Local generation of shared CSS variables and Quarto Sass defaults from the contract |
 | `src/fonts.css` | The ET Book fonts |
-| `src/defaults-light.scss`, `src/defaults-dark.scss`, `src/quarto.css` | The Sass variables and the rules that only Quarto needs |
+| `src/quarto.css` | The few selectors that only Quarto needs |
 | `vendor/bootstrap/bootstrap.min.css` | Bootstrap 5.3.8, MIT. Each CSS file starts with all of it, as a Bootswatch theme does |
 
 ```sh
@@ -149,3 +150,47 @@ Liepmann and others. The fonts are [ET Book](https://github.com/edwardtufte/et-b
 by Dmitry Krasny, Bonnie Scranton and Edward Tufte. The CSS starts with
 [Bootstrap](https://getbootstrap.com/). All three are under the MIT License, and so is
 this theme. See [LICENSE](LICENSE).
+
+## Foundation contract and acceptance checks
+
+Version 0.2.0 adopts an explicit light/dark foundation contract. Original palette
+anchors remain in `src/foundations.json`; CSS reads named roles rather than using
+brand colors as status colors. The built manifest is identical to that source.
+No runtime dependency on another theme repository is needed.
+
+Reading uses the browser's preferred root (16px reference), 20px ET Book body at 1.6 line height, 36px page titles,
+optional 48px `.editorial-title`/`.display-title`, 16px controls and 14px metadata.
+The main measure remains at most 640px. Notes flow inline on narrow screens; their position relative to the reference follows each renderer. Values are emitted in rem and follow browser
+zoom. The contract's separate presentation profile retains regular projected
+headings; reading sections keep Tufte's italic character. Ordinary groups and
+cards are transparent, borderless, square, shadowless and have no inner padding.
+Code and actual form controls retain functional boundaries.
+
+Achromatic links stay underlined, including hover. The optional blue highlight
+pairs its own fill and ink. Focus uses an opaque outline with an offset; primary
+hover and checkbox/radio marks have explicit paired ink. Status colors need words
+and icons too. Use native `disabled` on unavailable controls, `aria-selected` or
+`aria-current` with a non-color selected cue, and `aria-invalid` plus
+`aria-describedby` pointing to an explanatory error. CSS cannot supply those
+behaviors or accessible words for application authors. Token checks target 5:1
+for ordinary text, 4.5:1 action pairs and 3:1 meaningful boundaries; they do not
+certify whole-page accessibility or projection.
+
+Run the build, unit checks and actual renderer fixtures:
+
+```sh
+sh scripts/build.sh
+uv run --with pytest python -m pytest -q
+python3 scripts/verify_consumers.py /tmp/tufte-foundations-qa
+python3 -m http.server 8860 --bind 127.0.0.1 --directory /tmp/tufte-foundations-qa
+```
+
+The last command serves `smalldocs/_site/index.html` and
+`quarto/_site/index.html`; `narrow.html` embeds both at 390px. Inspect desktop and narrow widths in both modes;
+exercise focus, checkbox, primary action, selection and disabled controls.
+The fixture builder copies **current generated files** directly into clean
+consumers. `smalldocs add .` installs the last commit, so running that command
+against uncommitted changes does not verify those changes. SmallDocs 0.5.5 is
+pinned for the strict acceptance build; Quarto must be installed separately.
+Quarto consumes scoped Sass layers and embedded fonts, never the standalone
+Bootstrap stylesheet. Fonts and their original licenses remain unchanged.
